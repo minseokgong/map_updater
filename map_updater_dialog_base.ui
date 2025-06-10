@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MapUpdaterDialogBase</class>
+ <widget class="QDialog" name="MapUpdaterDialogBase">
+  <property name="windowTitle">
+   <string>Map Updater</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <item>
+    <widget class="QPushButton" name="btnLoadOrthophoto">
+     <property name="text">
+      <string>정사영상 불러오기</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnLoadCadastral">
+     <property name="text">
+      <string>수치지도 불러오기</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnLoadYoloResult">
+     <property name="text">
+      <string>건물 탐지 결과 연동</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnClassifyNewBuildings">
+     <property name="text">
+      <string>신규 건물 분류</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnProcessSAMResult">
+     <property name="text">
+      <string>SAM 결과 연동 및 후처리</string>
+     </property>
+    </widget>
+   </item>
+
+   <item>
+    <widget class="QPushButton" name="btnUpdateCadastralMap">
+     <property name="text">
+      <string>수치지도 자동 갱신</string>
+     </property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
