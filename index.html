@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>QGIS 지도 자동 갱신 시스템</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Noto Sans KR', sans-serif;
+    }
+
+    .overlay {
+      background-image: url("/static/img/background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      padding-top: 100px;
+      backdrop-filter: brightness(0.75);
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+    }
+
+    .btn-lg {
+      min-width: 200px;
+    }
+
+    .log-wrapper {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      max-width: 650px;
+      margin: 0 auto;
+      color: white;
+    }
+
+    #log {
+      height: 150px;
+      max-width: 600px;
+      margin: 0 auto;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 1rem 0;
+      font-size: 0.85rem;
+    }
+
+    .tech-features div {
+      padding: 0.25rem 1rem;
+      border-radius: 20px;
+      background-color: rgba(255,255,255,0.1);
+      margin: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ 네비게이션 -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">(주)이공</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">회사소개</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">플러그인 사용법</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">프로젝트 소개</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ✅ 메인 콘텐츠 -->
+  <div class="overlay d-flex align-items-center justify-content-center">
+    <div class="container text-center text-white mt-5">
+      <h2 class="fw-light mb-2">Smart GIS Platform for the Future</h2>
+      <h1 class="mb-4 fw-bold">QGIS 기반 자동 지도 갱신 시스템</h1>
+      <p class="lead mb-4">딥러닝 기반 건물 탐지 및 수치지도 자동 업데이트 솔루션</p>
+
+      <button id="btn-update" class="btn btn-success btn-lg px-4 mb-4">🗺 지도 자동 갱신</button>
+
+      <!-- ✅ 기술 기능 요약 -->
+      <div class="tech-features d-flex justify-content-center flex-wrap mb-5 text-white small">
+        <div>✔ YOLOv8 · SAM 기반 건물 탐지</div>
+        <div>✔ QGIS 플러그인 자동 연동</div>
+        <div>✔ 좌표 기반 수치지도 비교</div>
+        <div>✔ 로그 추적 및 실시간 응답</div>
+      </div>
+
+      <!-- ✅ 시스템 로그 -->
+      <div class="log-wrapper mt-3">
+        <h5 class="text-center">📋 시스템 로그</h5>
+        <pre id="log" class="text-light rounded"></pre>
+      </div>
+
+      <!-- ✅ 문의 메일 -->
+      <div class="mt-4">
+        <p class="text-white small">문의: <a href="mailto:leegong@naver.com" class="text-light text-decoration-underline">leegong@naver.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ 하단 푸터 -->
+  <footer class="text-center">
+    &copy; 2025 (주)이공 | 대표: 공민석, 이건우 | 사업자등록번호: 123-45-67890
+    <br> 남서울대학교 | 이메일: leegong@naver.com
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
